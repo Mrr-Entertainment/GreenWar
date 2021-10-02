@@ -27,7 +27,6 @@ public class BattleManager : MonoBehaviour
 		}
 	}
 	void attachEachOther(Region region) {
-		Debug.Log("attachEachOther");
 		attack(region.enemyUnits, region.playerUnits);
 		attack(region.playerUnits, region.enemyUnits);
 	}
@@ -54,6 +53,8 @@ public class BattleManager : MonoBehaviour
 		if (region.score <= 0) {
 			region.score = 100;
 			region.owner = attackers[0].owner;
+			Debug.Log("TriggerRegionConquered");
+			GameEventManager.TriggerRegionConquered(region);
 		}
 
 	}

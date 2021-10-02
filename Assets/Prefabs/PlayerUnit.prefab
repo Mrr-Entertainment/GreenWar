@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 1
-  attackPower: 5
+  attackPower: 1
   speed: 3
   health: 100
   currentRegion: {fileID: 0}

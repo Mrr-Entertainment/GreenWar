@@ -90,13 +90,7 @@ public class Attacker : MonoBehaviour
 	void setWanderPoint() {
 		var bounds = currentRegion.getBounds();
 		var center = bounds.center;
-		Debug.Log("Start to wander to " + center);
-
-		Debug.Log(" Bounds ");
-		Debug.Log(center.x - bounds.extents.x );
-		Debug.Log(center.x + bounds.extents.x);
-		Debug.Log(center.y - bounds.extents.y);
-		Debug.Log(center.y + bounds.extents.y);
+		/* Debug.Log("Start to wander to " + center); */
 
 		int attempt = 0;
 		Vector3 target = m_wanderDestination;
@@ -106,7 +100,7 @@ public class Attacker : MonoBehaviour
 			attempt++;
 		} while (!GetComponent<Collider2D>().OverlapPoint(target) || attempt <= 100);
 		target.z = transform.position.z;
-		Debug.Log("Wander to  " + target);
+		/* Debug.Log("Wander to  " + target); */
 		m_wanderDestination = target;
 	}
 

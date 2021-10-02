@@ -5,7 +5,7 @@ using UnityEngine;
 public class Region : MonoBehaviour
 {
 	//Find a way to populate at runtime
-	public GameObject[] neighbors;
+	public Region[] neighbors;
 	public Owner owner = Owner.Neutral;
 	public int score = 100;
 	public List<Attacker> enemyUnits;
