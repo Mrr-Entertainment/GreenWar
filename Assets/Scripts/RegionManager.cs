@@ -17,7 +17,7 @@ public class RegionManager : MonoBehaviour
 			PolygonCollider2D collider = region.GetComponent<PolygonCollider2D>();
 
 			foreach(Vector2 point in collider.points) {
-				var overlaps = Physics2D.OverlapCircleAll(collider.transform.TransformPoint( point), 0.3f);
+				var overlaps = Physics2D.OverlapCircleAll(collider.transform.TransformPoint( point), 1f);
 				foreach(Collider2D obj in overlaps) {
 					if (!obj) {
 						continue;

@@ -13,12 +13,16 @@ public class AI : MonoBehaviour
 	void RegionConquered(Region region) {
 		Debug.Log("RegionConquered");
 		if (region.owner == Owner.Enemy) {
-			int index = Random.Range(0, region.neighbors.Length);
-			Region dest = region.neighbors[index];
-			Debug.Log("Now attack" + dest);
-			//Great AI
-			foreach(var unit in region.enemyUnits) {
-				unit.targetRegion = dest;
+			foreach (var dest in region.neighbors) {
+				if (dest.owner == Owner.Enemy) {
+					continue;
+				}
+				Debug.Log("Now attack" + dest);
+				//Great AI
+				foreach(var unit in region.enemyUnits) {
+					unit.targetRegion = dest;
+				}
+
 			}
 		}
 	}
