@@ -3521,6 +3521,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f867ad7b9e3102a9641bef271a4d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &819933291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819933292}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &819933292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819933291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.023668, y: -2.5450833, z: -14.967658}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907830601
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,6 +6892,22 @@ PrefabInstance:
       value: Region
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
       value: -4.1254044
       objectReference: {fileID: 0}
@@ -6877,6 +6923,10 @@ PrefabInstance:
       propertyPath: m_LocalAABB.m_Extent.y
       value: 13.328694
       objectReference: {fileID: 0}
+    - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e25209550846d0a47b6a7ac0710aa731, type: 2}
     - target: {fileID: 3602852811455863963, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.size
       value: 15
