@@ -56,8 +56,6 @@ public class Enemy : MonoBehaviour
         var center = bounds.center;
 		Debug.Log("Start to wander to " + center);
 
-		float x = 0;
-		float y = 0;
 		int attempt = 0;
 		Vector3 target = m_wanderDestination;
 		do {
