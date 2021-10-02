@@ -10,9 +10,6 @@ using System.Linq;
 
 public class RegionManager : MonoBehaviour
 {
-	/* private bool[,] m_neighborhood; */
-	/* public Region[] m_regions; */
-	public GameObject[] m_regions;
 	private CircleCollider2D m_collider;
 
 
