@@ -27,7 +27,7 @@ public class EconomyManager : MonoBehaviour
         food = 0.35f;
         services = 0.25f;
         recreation = 0.1f;
-        happiness = (0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation)/4;
+        happiness = 0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation;
         
         lastUpdate = Time.time;
     }
@@ -43,7 +43,7 @@ public class EconomyManager : MonoBehaviour
             return;
         }
 
-        happiness = (0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation)/4;
+        happiness = 0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation;
         lastUpdate = Time.time;
     }
 

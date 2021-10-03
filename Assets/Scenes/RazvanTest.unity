@@ -745,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5569050035727780652, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5569050035778122133, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_IsActive
@@ -2403,9 +2403,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
       value: -1.0852276
       objectReference: {fileID: 0}
-    - target: {fileID: 5569050035727780652, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 0
     - target: {fileID: 8986609847497920296, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: 0.22600257
@@ -3151,10 +3148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1699828130, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
-      propertyPath: price
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7270783527266007283, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_Name
       value: Canvas
