@@ -17,6 +17,9 @@ public class Region : MonoBehaviour
 	public List<Attacker> playerUnits;
 	public float lastIncomeTime = 0;
 
+	public GameObject[] forestLevel;
+	int currentForestLevelIndex;
+
 	private PolygonCollider2D m_collider;
 
 	void Start()
@@ -32,6 +35,28 @@ public class Region : MonoBehaviour
 			pollution -= change;
 		} else {
 			pollution += change;
+		}
+	}
+
+	void UpdateForestLevel()
+	{
+		float forestness = treeCount/maxTreeCount;
+		int forestLevelIndex;
+		if (forestness < 0.2){
+			forestLevelIndex = 0;
+		} else if(forestness >= 0.2 && forestness < 0.4){
+			forestLevelIndex = 1;
+		} else if(forestness >= 0.4 && forestness < 0.6){
+			forestLevelIndex = 2;
+		} else if(forestness >= 0.6 && forestness < 0.8){
+			forestLevelIndex = 3;
+		} else if(forestness >= 0.8){
+			forestLevelIndex = 4;
+		}
+		if(forestLevelIndex != currentForestLevelIndex){
+			forestLevel[currentForestLevelIndex].enabled = false;
+			forestLevel[forestLevelIndex].enabled = true;
+			currentForestLevelIndex = forestLevelIndex;
 		}
 	}
 
