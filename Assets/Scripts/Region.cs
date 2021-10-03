@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,13 @@ public class Region : MonoBehaviour
 
 	void UpdatePollution()
 	{
-		float change = population/(treeCount*Math.Log10(population));
+		float change = (float)(population/(treeCount*Math.Log10(population)));
 		float ratio = treeCount/maxTreeCount;
-		ratio >= 0.6f ? pollution += change : pollution -= change;
+		if(ratio >= 0.6f) {
+			pollution -= change;
+		} else {
+			pollution += change;
+		}
 	}
 
 	void Update() 
