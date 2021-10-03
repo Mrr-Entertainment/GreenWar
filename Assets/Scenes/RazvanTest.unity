@@ -523,9 +523,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 469937322}
     m_Modifications:
-    - target: {fileID: 3918795891984580567, guid: 06460821468de876e8b0193a32eb346c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
+    - target: {fileID: 3918795891984580568, guid: 06460821468de876e8b0193a32eb346c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918795891984580568, guid: 06460821468de876e8b0193a32eb346c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918795891984580568, guid: 06460821468de876e8b0193a32eb346c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918795892429316943, guid: 06460821468de876e8b0193a32eb346c, type: 3}
       propertyPath: m_Name
@@ -631,6 +639,18 @@ PrefabInstance:
     - target: {fileID: 7139006180559128467, guid: cf0164883e679089189348a531d27bb1, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139006181409036314, guid: cf0164883e679089189348a531d27bb1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139006181409036314, guid: cf0164883e679089189348a531d27bb1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139006181409036314, guid: cf0164883e679089189348a531d27bb1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0164883e679089189348a531d27bb1, type: 3}
