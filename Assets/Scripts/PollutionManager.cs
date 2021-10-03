@@ -10,16 +10,18 @@ public class PollutionManager : MonoBehaviour
     float globalPollution;
     public TextMeshProUGUI pollutionText;
 
+    bool firstUpdate = true;
+
     void Start()
     {
-        regions = FindObjectsOfType(typeof(Region)) as Region[];
-        lastUpdate = Time.time;  
+        regions = FindObjectsOfType(typeof(Region)) as Region[]; 
     }
 
 
     void Update()
     {
-        if(Time.time - lastUpdate < 10f){
+        if((Time.time - lastUpdate < 10f) && !firstUpdate){
+            firstUpdate = false;
             return;
         }
         

@@ -20,7 +20,7 @@ public class AI : MonoBehaviour
 				Debug.Log("Now attack" + dest);
 				//Great AI
 				foreach(var unit in region.enemyUnits) {
-					unit.targetRegion = dest;
+					unit.moveToRegion(dest);
 				}
 
 			}

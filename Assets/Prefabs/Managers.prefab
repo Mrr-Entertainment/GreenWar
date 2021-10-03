@@ -49,6 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regions: []
+  mainRegion: {fileID: 0}
+  unitPrefab: {fileID: 0}
+  selectedUnit: {fileID: 0}
 --- !u!114 &5382502824806638700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdd36e7bb1b62a4792c7d581b9b6a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happinessText: {fileID: 0}
+  waterText: {fileID: 0}
+  foodText: {fileID: 0}
+  servicesText: {fileID: 0}
+  recreationText: {fileID: 0}
