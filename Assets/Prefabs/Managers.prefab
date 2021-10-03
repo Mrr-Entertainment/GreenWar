@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regions: []
   fundsText: {fileID: 0}
+  incomeSpeed: 2
 --- !u!114 &533732997
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class TreeManager : MonoBehaviour
 	public Region[] regions;
 	public TextMeshProUGUI fundsText;
 	EconomyManager economyManager;
+	public float incomeSpeed;
 
 	void Start()
 	{
@@ -19,7 +20,7 @@ public class TreeManager : MonoBehaviour
 	void Update()
 	{
 		foreach(Region region in regions) {
-			if (Time.time - region.lastIncomeTime < 10f) {
+			if (Time.time - region.lastIncomeTime < incomeSpeed) {
 				continue;
 			}
 			region.lastIncomeTime = Time.time;
