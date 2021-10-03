@@ -8,7 +8,10 @@ public class Region : MonoBehaviour
 	public Region[] neighbors;
 	public Owner owner = Owner.Neutral;
 	public int score = 100;
-	public int treeCount = 100;
+	public int treeCount = 35000;
+	public int maxTreeCount = 100000;
+	public float pollution = 0.1f;
+	public int population = 5000;
 	public List<Attacker> enemyUnits;
 	public List<Attacker> playerUnits;
 	public float lastIncomeTime = 0;
@@ -18,6 +21,18 @@ public class Region : MonoBehaviour
 	void Start()
 	{
 		m_collider = GetComponent<PolygonCollider2D>();
+	}
+
+	void UpdatePollution()
+	{
+		float change = population/(treeCount*Math.log(population, 10));
+		float ratio = treeCount/maxTreeCount;
+		ratio >= 0.6f ? pollution += change : pollution -= change;
+	}
+
+	void Update() 
+	{
+		
 	}
 
 	public Bounds getBounds() {
