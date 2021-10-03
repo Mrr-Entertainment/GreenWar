@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3602852811455863963}
   - component: {fileID: 3602852811455863956}
   - component: {fileID: 8471873658193192120}
+  - component: {fileID: -8564300483616494601}
   m_Layer: 0
   m_Name: Region
   m_TagString: Region
@@ -244,5 +245,23 @@ MonoBehaviour:
   - {fileID: 0}
   owner: 0
   score: 100
+  treeCount: 35000
+  maxTreeCount: 100000
+  pollution: 0.1
+  population: 5000
   enemyUnits: []
   playerUnits: []
+  lastIncomeTime: 0
+--- !u!114 &-8564300483616494601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3602852811455863958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2deb0c254baa3ba4bac3f18df9de8a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
