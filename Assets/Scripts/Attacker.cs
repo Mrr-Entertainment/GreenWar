@@ -6,6 +6,7 @@ public class Attacker : MonoBehaviour
 {
 	public Owner owner;
 	public int attackPower;
+	public int incomePower;
 	public float speed = 3.0f;
 	public int health;
 	public Region  currentRegion;
@@ -44,12 +45,6 @@ public class Attacker : MonoBehaviour
 			currentRegion.enterRegion(this);
 		}
 	}
-
-	void attack() {
-	}
-
-
-
 	void movement() {
 
 		if (currentRegion != targetRegion) {
