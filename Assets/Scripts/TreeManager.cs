@@ -32,18 +32,17 @@ public class TreeManager : MonoBehaviour
 				}
 				economyManager.funds += sum;
 				fundsText.text = economyManager.funds + "$";
-				region.treeCount -= sum;
+				region.addTrees(-sum);
 				//Show popup with funds
 
 			} else if (region.enemyUnits.Count != 0 && region.playerUnits.Count == 0) {
 				//GenerateTrees
 				int sum = 0;
-				foreach (var unit in region.playerUnits) {
+				foreach (var unit in region.enemyUnits) {
 					sum+= unit.incomePower;
 				}
-				region.treeCount += sum;
+				region.addTrees(sum);
 			}
-			region.UpdateForestLevel();
 		}
 	}
 }
