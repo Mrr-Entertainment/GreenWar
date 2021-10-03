@@ -6,19 +6,20 @@ using TMPro;
 public class TreeManager : MonoBehaviour
 {
 	public Region[] regions;
-	public int income = 0;
-	public TextMeshProUGUI incomeText;
+	public TextMeshProUGUI fundsText;
+	EconomyManager economyManager;
 
 	void Start()
 	{
 		regions = FindObjectsOfType(typeof(Region)) as Region[];
-		incomeText.text = income + "$";
+		economyManager = gameObject.GetComponent<EconomyManager>();	
+		fundsText.text = economyManager.funds + "$";
 	}
 
 	void Update()
 	{
 		foreach(Region region in regions) {
-			if (Time.time - region.lastIncomeTime < 2f) {
+			if (Time.time - region.lastIncomeTime < 10f) {
 				continue;
 			}
 			region.lastIncomeTime = Time.time;
@@ -28,10 +29,10 @@ public class TreeManager : MonoBehaviour
 				foreach (var unit in region.playerUnits) {
 					sum+= unit.incomePower;
 				}
-				income += sum;
-				incomeText.text = income + "$";
+				economyManager.funds += sum;
+				fundsText.text = economyManager.funds + "$";
 				region.treeCount -= sum;
-				//Show popup with money income
+				//Show popup with funds
 
 			} else if (region.enemyUnits.Count != 0 && region.playerUnits.Count == 0) {
 				//GenerateTrees

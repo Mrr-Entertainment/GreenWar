@@ -19,7 +19,7 @@ public class PollutionManager : MonoBehaviour
 
     void Update()
     {
-        if(Time.time - lastUpdate < 2f){
+        if(Time.time - lastUpdate < 10f){
             return;
         }
         

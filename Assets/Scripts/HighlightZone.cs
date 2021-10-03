@@ -11,7 +11,13 @@ public class HighlightZone : MonoBehaviour
     float startTime;
     bool animating = false;
 
-    void Update() {
+    void Start() 
+    {
+        originalColor = gameObject.GetComponent<UnityEngine.U2D.SpriteShapeRenderer>().materials[1].color;
+    }
+
+    void Update() 
+    {
         if(animating){
             float t = (Time.time - startTime) * speed;
             gameObject.GetComponent<UnityEngine.U2D.SpriteShapeRenderer>().materials[1].color = Color.Lerp(startColor, endColor, t);
@@ -21,16 +27,17 @@ public class HighlightZone : MonoBehaviour
         }
     }
 
-    void OnMouseEnter() {
+    void OnMouseEnter() 
+    {
         startTime = Time.time;
-        originalColor = gameObject.GetComponent<UnityEngine.U2D.SpriteShapeRenderer>().materials[1].color;
         startColor = originalColor;
         endColor = new Color(startColor.r, startColor.g, startColor.b, startColor.a+0.3f);
         animating = true;
     }
 
-    void OnMouseExit() {
-        gameObject.GetComponent<UnityEngine.U2D.SpriteShapeRenderer>().materials[1].color = startColor;
+    void OnMouseExit() 
+    {
+        startTime = Time.time;
         startColor = endColor;
         endColor = originalColor;
         animating = true;
