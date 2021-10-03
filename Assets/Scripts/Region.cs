@@ -25,7 +25,7 @@ public class Region : MonoBehaviour
 
 	void UpdatePollution()
 	{
-		float change = population/(treeCount*Math.log(population, 10));
+		float change = population/(treeCount*Math.Log10(population));
 		float ratio = treeCount/maxTreeCount;
 		ratio >= 0.6f ? pollution += change : pollution -= change;
 	}
