@@ -41,7 +41,7 @@ public class Region : MonoBehaviour
 	void UpdateForestLevel()
 	{
 		float forestness = treeCount/maxTreeCount;
-		int forestLevelIndex;
+		int forestLevelIndex = 0;
 		if (forestness < 0.2){
 			forestLevelIndex = 0;
 		} else if(forestness >= 0.2 && forestness < 0.4){
@@ -54,8 +54,8 @@ public class Region : MonoBehaviour
 			forestLevelIndex = 4;
 		}
 		if(forestLevelIndex != currentForestLevelIndex){
-			forestLevel[currentForestLevelIndex].enabled = false;
-			forestLevel[forestLevelIndex].enabled = true;
+			forestLevel[currentForestLevelIndex].SetActive(false);
+			forestLevel[forestLevelIndex].SetActive(true);
 			currentForestLevelIndex = forestLevelIndex;
 		}
 	}
