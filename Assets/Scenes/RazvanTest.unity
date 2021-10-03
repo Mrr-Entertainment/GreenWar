@@ -391,19 +391,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5569050035727780652, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8986609848204090906, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8986609849058753971, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8986609849291497096, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e14ec111a8d8aeda426d75f810ce8a, type: 3}
@@ -428,17 +428,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7139006180559128466, guid: cf0164883e679089189348a531d27bb1, type: 3}
   m_PrefabInstance: {fileID: 7139006182371148119}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1870622079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7349734909129765292, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
-  m_PrefabInstance: {fileID: 8849201452746548372}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c8de999b32c9bed5af1f99e3f8f68ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2017892593 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7270783528071816330, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
@@ -641,10 +630,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1799668429, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1870622079}
+    - target: {fileID: 1699828130, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: price
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7270783527266007283, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_Name
       value: Canvas

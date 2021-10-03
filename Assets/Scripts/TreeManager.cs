@@ -30,10 +30,16 @@ public class TreeManager : MonoBehaviour
 				foreach (var unit in region.playerUnits) {
 					sum+= unit.incomePower;
 				}
-				economyManager.funds += sum;
-				fundsText.text = economyManager.funds + "$";
-				region.treeCount -= sum;
-				//Show popup with funds
+
+				if(region.treeCount > 0) {
+					economyManager.funds += sum;
+					fundsText.text = economyManager.funds + "$";
+					region.treeCount -= sum;
+					if(region.treeCount < 0){
+						region.treeCount = 0;
+					}
+					//Show popup with funds
+				}
 
 			} else if (region.enemyUnits.Count != 0 && region.playerUnits.Count == 0) {
 				//GenerateTrees

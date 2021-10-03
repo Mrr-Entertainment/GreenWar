@@ -23,6 +23,12 @@ public class EconomyManager : MonoBehaviour
 
     void Start()
     {
+        water = 0.5f;
+        food = 0.35f;
+        services = 0.25f;
+        recreation = 0.1f;
+        happiness = (0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation)/4;
+        
         lastUpdate = Time.time;
     }
 
@@ -39,5 +45,37 @@ public class EconomyManager : MonoBehaviour
 
         happiness = (0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation)/4;
         lastUpdate = Time.time;
+    }
+
+    public void AddWater()
+    {
+        water += 0.25f;
+        if(water > 1f){
+            water = 1f;
+        }
+    }
+
+    public void AddFood()
+    {
+        food += 0.20f;
+        if(food > 1f){
+            food = 1f;
+        }
+    }
+
+    public void AddServices()
+    {
+        services += 0.15f;
+        if(services > 1f){
+            services = 1f;
+        }
+    }
+
+    public void AddRecreation()
+    {
+        recreation += 0.10f;
+        if(recreation > 1f){
+            recreation = 1f;
+        }
     }
 }
