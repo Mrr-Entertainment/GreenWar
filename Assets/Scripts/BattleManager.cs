@@ -5,25 +5,28 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
 	public Region[] regions;
-    void Start()
-    {
-         regions = FindObjectsOfType(typeof(Region)) as Region[];
-    }
+	public Region mainRegion;
+	public GameObject unitPrefab;
+	public Attacker selectedUnit;
+	void Start()
+	{
+		regions = FindObjectsOfType(typeof(Region)) as Region[];
+	}
 
-    void FixedUpdate()
-    {
+	void Update()
+	{
 		foreach(Region region in regions) {
 			resolveBattle(region);
 		}
-    }
+
+		if (Input.GetMouseButton(0)) {
+			OnClicked();
+		}
+	}
 
 	void resolveBattle(Region region) {
 		if (region.enemyUnits.Count != 0 && region.playerUnits.Count != 0) {
 			attachEachOther(region);
-		} else if  (region.enemyUnits.Count != 0 && region.owner != Owner.Enemy) {
-			attackRegion(region.enemyUnits, region);
-		} else if ((region.playerUnits.Count != 0 && region.owner != Owner.Player)) {
-			attackRegion(region.playerUnits, region);
 		}
 	}
 	void attachEachOther(Region region) {
@@ -37,7 +40,7 @@ public class BattleManager : MonoBehaviour
 			defenders[index].health -= unit.attackPower;
 			if (! isAlive(defenders[index])) {
 				Debug.Log("Unit killed");
-				Destroy(defenders[index].gameObject, 1f);
+				Destroy(defenders[index].gameObject, 0.5f);
 				defenders.RemoveAt(index);
 			}
 		}
@@ -46,16 +49,39 @@ public class BattleManager : MonoBehaviour
 	bool isAlive(Attacker unit) {
 		return unit.health > 0;
 	}
-	void attackRegion(List<Attacker> attackers, Region region) {
-		foreach (var unit in attackers ) {
-			region.score -= unit.attackPower;
-		}
-		if (region.score <= 0) {
-			region.score = 100;
-			region.owner = attackers[0].owner;
-			Debug.Log("TriggerRegionConquered");
-			GameEventManager.TriggerRegionConquered(region);
-		}
 
+	public void spawnPlayerUnit() {
+		Instantiate(unitPrefab, mainRegion.transform.position, Quaternion.identity);
+	}
+
+	void OnClicked()
+	{
+		RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		bool unitFound = false;
+		Region tempRegion = null;
+		foreach(var hit in hits) {
+			if(hit.rigidbody != null)
+			{
+				Debug.Log("RigidBody");
+				Attacker unit = hit.rigidbody.gameObject.GetComponent<Attacker>();
+				if (unit != null && unit.owner == Owner.Player) {
+					selectedUnit = unit;
+					unitFound = true;
+					break;
+				}
+			} else if (hit.collider != null) {
+				Debug.Log("collider");
+				Region region = hit.collider.gameObject.GetComponent<Region>();
+				if (region != null) {
+					tempRegion = region;
+				}
+			}
+		}
+		if (! unitFound && tempRegion != null) {
+			if (selectedUnit != null) {
+				selectedUnit.moveToRegion(tempRegion);
+			}
+
+		}
 	}
 }

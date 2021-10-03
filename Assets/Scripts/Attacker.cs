@@ -25,14 +25,21 @@ public class Attacker : MonoBehaviour
 
 	void Start()
 	{
-        m_collider = GetComponent<Collider2D>();
+		m_collider = GetComponent<Collider2D>();
 		whereIAm();
 	}
 
 	// Update is called once per frame
-	void FixedUpdate()
+	void Update()
 	{
-		movement();
+
+		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
+		} else {
+			if (WanderState.Wander == m_wanderState) {
+				m_wanderState = WanderState.Wait;
+				StartCoroutine(WaitToWander());
+			}
+		}
 	}
 
 	// called when this GameObject collides with GameObject2.
@@ -45,28 +52,14 @@ public class Attacker : MonoBehaviour
 			currentRegion.enterRegion(this);
 		}
 	}
-	void movement() {
-
-		if (currentRegion != targetRegion) {
-			moveToTargetRegion();
-		}
-		//wander
-		if (currentRegion == targetRegion) {
-			wander();
-			if (currentRegion.owner != Owner.Enemy)  {
-				currentRegion.score -= attackPower;
-			}
-		}
-	}
 
 
 	void wander() {
 		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
 
-			float step =  speed * Time.fixedDeltaTime; // calculate distance to move
-			var pos = Vector3.MoveTowards(transform.position, m_wanderDestination, step);
+			var pos  = m_wanderDestination;
 			pos.z = transform.position.z;
-			transform.position = pos;
+			GetComponent<NavMeshAgent2D>().destination = pos;
 		} else {
 			if (WanderState.Wander == m_wanderState) {
 				m_wanderState = WanderState.Wait;
@@ -99,16 +92,16 @@ public class Attacker : MonoBehaviour
 		m_wanderDestination = target;
 	}
 
-	void moveToTargetRegion(){
-		if (!targetRegion) {
+	public void moveToRegion(Region region){
+		if (region == null ||  targetRegion == region) {
 			return;
 		}
+		targetRegion = region;
 		float step =  speed * Time.fixedDeltaTime; // calculate distance to move
 
-		var pos  = Vector3.MoveTowards(transform.position, targetRegion.transform.position, step);
+		var pos  = targetRegion.transform.position;
 		pos.z = transform.position.z;
-		transform.position = pos;
-
+		GetComponent<NavMeshAgent2D>().destination = pos;
 		m_wanderDestination = targetRegion.transform.position;
 	}
 
