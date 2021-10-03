@@ -30,11 +30,12 @@ public class BattleManager : MonoBehaviour
 		}
 	}
 	void attachEachOther(Region region) {
-		attack(region.enemyUnits, region.playerUnits);
-		attack(region.playerUnits, region.enemyUnits);
+		//TODO: retreat the enemy of hp is to low
+		attack(region.enemyUnits, region.playerUnits, region);
+		attack(region.playerUnits, region.enemyUnits, region);
 	}
 
-	void attack (List<Attacker> attackers, List<Attacker> defenders) {
+	void attack (List<Attacker> attackers, List<Attacker> defenders, Region region) {
 		foreach (var unit in attackers ) {
 			int index = Random.Range(0, defenders.Count -1);
 			defenders[index].health -= unit.attackPower;
@@ -42,6 +43,9 @@ public class BattleManager : MonoBehaviour
 				Debug.Log("Unit killed");
 				Destroy(defenders[index].gameObject, 0.5f);
 				defenders.RemoveAt(index);
+				if (defenders.Count == 0) {
+					GameEventManager.TriggerRegionConquered(region);
+				}
 			}
 		}
 	}

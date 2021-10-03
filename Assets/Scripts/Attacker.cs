@@ -13,6 +13,7 @@ public class Attacker : MonoBehaviour
 	public Region  targetRegion;
 	private Collider2D m_collider;
 	private float m_startZ;
+	private NavMeshAgent2D m_agent;
 
 
 	private Vector3 m_wanderDestination;
@@ -26,6 +27,7 @@ public class Attacker : MonoBehaviour
 
 	void Start()
 	{
+		m_agent = GetComponent<NavMeshAgent2D>();
 		m_startZ = transform.position.z;
 		m_collider = GetComponent<Collider2D>();
 		whereIAm();
@@ -63,7 +65,7 @@ public class Attacker : MonoBehaviour
 
 			var pos  = m_wanderDestination;
 			pos.z = m_startZ;
-			GetComponent<NavMeshAgent2D>().destination = pos;
+			m_agent.destination = pos;
 		} else {
 			if (WanderState.Wander == m_wanderState) {
 				m_wanderState = WanderState.Wait;
@@ -104,7 +106,7 @@ public class Attacker : MonoBehaviour
 
 		var pos  = targetRegion.transform.position;
 		pos.z = m_startZ;
-		GetComponent<NavMeshAgent2D>().destination = pos;
+		m_agent.destination = pos;
 		m_wanderDestination = targetRegion.transform.position;
 	}
 

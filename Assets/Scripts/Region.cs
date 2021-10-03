@@ -25,6 +25,9 @@ public class Region : MonoBehaviour
 	void Start()
 	{
 		m_collider = GetComponent<PolygonCollider2D>();
+		foreach (var tree in forestLevel) {
+			tree.SetActive(false);
+		}
 		UpdateForestLevel();
 	}
 
@@ -54,7 +57,6 @@ public class Region : MonoBehaviour
 		} else if(forestness >= 0.8){
 			forestLevelIndex = 4;
 		}
-		Debug.Log("Forestness" + forestness + " index " + forestLevelIndex);
 		if (forestLevelIndex > forestLevel.Length - 1) {return;}
 		if(forestLevelIndex != currentForestLevelIndex){
 			forestLevel[currentForestLevelIndex].SetActive(false);
@@ -74,6 +76,7 @@ public class Region : MonoBehaviour
 	public void enterRegion(Attacker attacker) {
 		if (noUnitPresent()) {
 			lastIncomeTime = Time.time;
+			GameEventManager.RegionConquered(this);
 		}
 		switch(attacker.owner) {
 			case Owner.Enemy:
@@ -109,6 +112,12 @@ public class Region : MonoBehaviour
 					break;
 				}
 		}
+	}
+
+	public void addTrees(int treeSum ) {
+		treeCount = Mathf.Clamp(treeCount + treeSum, 0, maxTreeCount);
+		UpdateForestLevel();
+		
 	}
 	bool noUnitPresent() {
 		return enemyUnits.Count == 0 && playerUnits.Count == 0;
