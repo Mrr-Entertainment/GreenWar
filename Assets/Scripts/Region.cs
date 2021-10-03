@@ -9,8 +9,8 @@ public class Region : MonoBehaviour
 	public Region[] neighbors;
 	public Owner owner = Owner.Neutral;
 	public int score = 100;
-	public int treeCount = 35000;
-	public int maxTreeCount = 100000;
+	public float treeCount = 35000;
+	public float maxTreeCount = 100000;
 	public float pollution = 0.1f;
 	public int population = 5000;
 	public List<Attacker> enemyUnits;
@@ -18,13 +18,14 @@ public class Region : MonoBehaviour
 	public float lastIncomeTime = 0;
 
 	public GameObject[] forestLevel;
-	int currentForestLevelIndex;
+	public int currentForestLevelIndex;
 
 	private PolygonCollider2D m_collider;
 
 	void Start()
 	{
 		m_collider = GetComponent<PolygonCollider2D>();
+		UpdateForestLevel();
 	}
 
 	void UpdatePollution()
@@ -38,7 +39,7 @@ public class Region : MonoBehaviour
 		}
 	}
 
-	void UpdateForestLevel()
+	public void UpdateForestLevel()
 	{
 		float forestness = treeCount/maxTreeCount;
 		int forestLevelIndex = 0;
@@ -53,6 +54,8 @@ public class Region : MonoBehaviour
 		} else if(forestness >= 0.8){
 			forestLevelIndex = 4;
 		}
+		Debug.Log("Forestness" + forestness + " index " + forestLevelIndex);
+		if (forestLevelIndex > forestLevel.Length - 1) {return;}
 		if(forestLevelIndex != currentForestLevelIndex){
 			forestLevel[currentForestLevelIndex].SetActive(false);
 			forestLevel[forestLevelIndex].SetActive(true);
@@ -60,9 +63,9 @@ public class Region : MonoBehaviour
 		}
 	}
 
-	void Update() 
+	void Update()
 	{
-		
+
 	}
 
 	public Bounds getBounds() {

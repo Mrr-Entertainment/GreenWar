@@ -42,6 +42,7 @@ public class TreeManager : MonoBehaviour
 				}
 				region.treeCount += sum;
 			}
+			region.UpdateForestLevel();
 		}
 	}
 }
