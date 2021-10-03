@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regions: []
   mainRegion: {fileID: 0}
-  unitPrefab: {fileID: 0}
+  unitPrefab: {fileID: 3918795892429316943, guid: 06460821468de876e8b0193a32eb346c, type: 3}
   selectedUnit: {fileID: 0}
 --- !u!114 &5382502824806638700
 MonoBehaviour:

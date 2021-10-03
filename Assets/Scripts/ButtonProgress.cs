@@ -86,7 +86,7 @@ public class ButtonProgress : MonoBehaviour
     public void StartFill(float timeToFill)
     {
         shouldFill = true;
-        fillTime = 10f;
+        fillTime = timeToFill;
         elapsedFillTime = 0.0f;
         image.fillAmount = 1.0f;
 

@@ -12,6 +12,7 @@ public class Attacker : MonoBehaviour
 	public Region  currentRegion;
 	public Region  targetRegion;
 	private Collider2D m_collider;
+	private float m_startZ;
 
 
 	private Vector3 m_wanderDestination;
@@ -25,6 +26,7 @@ public class Attacker : MonoBehaviour
 
 	void Start()
 	{
+		m_startZ = transform.position.z;
 		m_collider = GetComponent<Collider2D>();
 		whereIAm();
 	}
@@ -32,7 +34,9 @@ public class Attacker : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
+		var pos = transform.position;
+		pos.z = m_startZ;
+		transform.position = pos;
 		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
 		} else {
 			if (WanderState.Wander == m_wanderState) {
@@ -58,7 +62,7 @@ public class Attacker : MonoBehaviour
 		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
 
 			var pos  = m_wanderDestination;
-			pos.z = transform.position.z;
+			pos.z = m_startZ;
 			GetComponent<NavMeshAgent2D>().destination = pos;
 		} else {
 			if (WanderState.Wander == m_wanderState) {
@@ -88,7 +92,6 @@ public class Attacker : MonoBehaviour
 			attempt++;
 		} while (!GetComponent<Collider2D>().OverlapPoint(target) || attempt <= 100);
 		target.z = transform.position.z;
-		/* Debug.Log("Wander to  " + target); */
 		m_wanderDestination = target;
 	}
 
@@ -100,7 +103,7 @@ public class Attacker : MonoBehaviour
 		float step =  speed * Time.fixedDeltaTime; // calculate distance to move
 
 		var pos  = targetRegion.transform.position;
-		pos.z = transform.position.z;
+		pos.z = m_startZ;
 		GetComponent<NavMeshAgent2D>().destination = pos;
 		m_wanderDestination = targetRegion.transform.position;
 	}
