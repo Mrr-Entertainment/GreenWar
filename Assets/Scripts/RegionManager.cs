@@ -23,11 +23,9 @@ public class RegionManager : MonoBehaviour
 						continue;
 					}
 					var t = obj.GetComponent<Region>();
-					Debug.Log("Found " + t);
 					if (obj.tag == "Region" ) {
 						var tempReg = obj.GetComponent<Region>();
 						if (tempReg != region) {
-							Debug.Log("Add " + tempReg);
 							neighbors.Add(tempReg);
 						}
 					}

@@ -22,6 +22,8 @@ public class Region : MonoBehaviour
 
 	private PolygonCollider2D m_collider;
 
+	public int income { get; set; }
+
 	void Start()
 	{
 		m_collider = GetComponent<PolygonCollider2D>();
@@ -29,6 +31,7 @@ public class Region : MonoBehaviour
 			tree.SetActive(false);
 		}
 		UpdateForestLevel();
+		income = 0;
 	}
 
 	void UpdatePollution()
@@ -57,6 +60,13 @@ public class Region : MonoBehaviour
 		} else if(forestness >= 0.8){
 			forestLevelIndex = 4;
 		}
+
+		if(forestness < 0.01f){
+			forestLevel[0].SetActive(false);
+		} else {
+			forestLevel[0].SetActive(true);
+		}
+
 		if (forestLevelIndex > forestLevel.Length - 1) {return;}
 		if(forestLevelIndex != currentForestLevelIndex){
 			forestLevel[currentForestLevelIndex].SetActive(false);

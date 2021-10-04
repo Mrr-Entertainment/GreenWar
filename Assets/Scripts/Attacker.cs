@@ -51,7 +51,6 @@ public class Attacker : MonoBehaviour
 	// called when this GameObject collides with GameObject2.
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		Debug.Log("GameObject1 collided with " + col.name);
 		if (col.tag == "Region" && currentRegion != targetRegion) {
 			currentRegion.leaveRegion(this);
 			currentRegion = col.gameObject.GetComponent<Region>();

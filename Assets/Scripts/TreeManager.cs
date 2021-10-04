@@ -6,15 +6,11 @@ using TMPro;
 public class TreeManager : MonoBehaviour
 {
 	public Region[] regions;
-	public TextMeshProUGUI fundsText;
-	EconomyManager economyManager;
 	public float incomeSpeed;
 
 	void Start()
 	{
 		regions = FindObjectsOfType(typeof(Region)) as Region[];
-		economyManager = gameObject.GetComponent<EconomyManager>();	
-		fundsText.text = economyManager.funds + "$";
 	}
 
 	void Update()
@@ -32,13 +28,15 @@ public class TreeManager : MonoBehaviour
 				}
 
 				if(region.treeCount > 0) {
-					economyManager.funds += sum;
-					fundsText.text = economyManager.funds + "$";
+					region.income = sum;
 					region.addTrees(-sum);
 					if(region.treeCount < 0){
 						region.treeCount = 0;
 					}
 					//Show popup with funds
+				}
+				else {
+					region.income = 0;
 				}
 			} else if (region.enemyUnits.Count != 0 && region.playerUnits.Count == 0) {
 				//GenerateTrees
@@ -47,6 +45,7 @@ public class TreeManager : MonoBehaviour
 					sum+= unit.incomePower;
 				}
 				region.addTrees(sum);
+				region.income = 0;
 			}
 		}
 	}

@@ -29,7 +29,6 @@ public class AI : MonoBehaviour
 	private IEnumerator attackNextRegion(Region region)
 	{
 		int waitTime = Random.Range(0, 20);
-		Debug.Log("Wait for " + waitTime);
 		yield return new WaitForSeconds(waitTime);
 		foreach (var dest in region.neighbors) {
 			if (dest.owner == Owner.Enemy) {

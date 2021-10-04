@@ -64,9 +64,7 @@ public class BattleManager : MonoBehaviour
 		bool unitFound = false;
 		Region tempRegion = null;
 		foreach(var hit in hits) {
-			if(hit.rigidbody != null)
-			{
-				Debug.Log("RigidBody");
+			if(hit.rigidbody != null){
 				Attacker unit = hit.rigidbody.gameObject.GetComponent<Attacker>();
 				if (unit != null && unit.owner == Owner.Player) {
 					selectedUnit = unit;
@@ -74,7 +72,6 @@ public class BattleManager : MonoBehaviour
 					break;
 				}
 			} else if (hit.collider != null) {
-				Debug.Log("collider");
 				Region region = hit.collider.gameObject.GetComponent<Region>();
 				if (region != null) {
 					tempRegion = region;

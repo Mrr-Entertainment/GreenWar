@@ -64,6 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f867ad7b9e3102a9641bef271a4d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpwanInterval: 40
+  maxSpwanInterval: 70
+  enemyPrefab: {fileID: 7139006180559128467, guid: cf0164883e679089189348a531d27bb1, type: 3}
 --- !u!114 &2848008329859370824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +92,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regions: []
-  fundsText: {fileID: 0}
   incomeSpeed: 2
 --- !u!114 &533732997
 MonoBehaviour:
@@ -116,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdd36e7bb1b62a4792c7d581b9b6a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicIncome: 0
+  fundsText: {fileID: 0}
+  incomeText: {fileID: 0}
   happinessText: {fileID: 0}
   waterText: {fileID: 0}
   foodText: {fileID: 0}
