@@ -29,7 +29,7 @@ public class TreeManager : MonoBehaviour
 
 				if(region.treeCount > 0) {
 					region.income = sum;
-					region.addTrees(-sum);
+					region.addTrees(-(sum * 10));
 					if(region.treeCount < 0){
 						region.treeCount = 0;
 					}
@@ -45,6 +45,8 @@ public class TreeManager : MonoBehaviour
 					sum+= unit.incomePower;
 				}
 				region.addTrees(sum);
+				region.income = 0;
+			} else {
 				region.income = 0;
 			}
 		}

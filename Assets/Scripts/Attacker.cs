@@ -17,6 +17,7 @@ public class Attacker : MonoBehaviour
 	private NavMeshAgent2D m_agent;
 	public GameObject selectedIcon;
 	public GameObject unselectedIcon;
+	private float lastClick = 0;
 
 
 	enum WanderState {
@@ -60,12 +61,12 @@ public class Attacker : MonoBehaviour
 
 		int attempt = 0;
 		Vector3 target = currentRegion.transform.position;
-		Debug.Log("Wander in " + currentRegion);
+		/* Debug.Log("Wander in " + currentRegion); */
 		do {
 			target.x = UnityEngine.Random.Range(center.x - bounds.extents.x, center.x + bounds.extents.x);
 			target.y = UnityEngine.Random.Range(center.y - bounds.extents.y, center.y + bounds.extents.y);
 			attempt++;
-			Debug.Log("Try Wander point to " + target);
+			/* Debug.Log("Try Wander point to " + target); */
 			if (m_collider.OverlapPoint(target)) {
 				break;
 			}
@@ -74,7 +75,7 @@ public class Attacker : MonoBehaviour
 			target = currentRegion.transform.position;
 		}
 		target.z = transform.position.z;
-		Debug.Log("SEt Wander point to " + target);
+		/* Debug.Log("SEt Wander point to " + target); */
 		m_agent.destination = target;
 	}
 

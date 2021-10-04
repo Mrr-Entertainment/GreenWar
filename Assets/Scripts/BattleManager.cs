@@ -8,6 +8,7 @@ public class BattleManager : MonoBehaviour
 	public Region mainRegion;
 	public GameObject unitPrefab;
 	public Attacker selectedUnit;
+	private float lastClick = 0;
 	void Start()
 	{
 		regions = FindObjectsOfType(typeof(Region)) as Region[];
@@ -62,6 +63,9 @@ public class BattleManager : MonoBehaviour
 		Region tempRegion = null;
 		foreach(var hit in hits) {
 			if(hit.rigidbody != null){
+				if (Time.time - lastClick < 0.2f)  {
+					break;
+				}
 				Attacker unit = hit.rigidbody.gameObject.GetComponent<Attacker>();
 				if (unit != null && unit.owner == Owner.Player) {
 					if (selectedUnit != null) {
@@ -74,6 +78,7 @@ public class BattleManager : MonoBehaviour
 					selectedUnit = unit;
 					selectedUnit.selectUnit();
 					unitFound = true;
+					lastClick = Time.time;
 					break;
 				}
 			} else if (hit.collider != null) {

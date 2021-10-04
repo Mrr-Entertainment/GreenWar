@@ -33,7 +33,7 @@ public class EconomyManager : MonoBehaviour
         services = 0.25f;
         recreation = 0.1f;
         happiness = 0.35f*water + 0.30f*food + 0.20f*services + 0.15f*recreation;
-        basicIncome = 500;
+        basicIncome = 100;
         income = basicIncome;
         expenses = 0;
         regions = FindObjectsOfType(typeof(Region)) as Region[];
@@ -44,7 +44,9 @@ public class EconomyManager : MonoBehaviour
     {
         income = basicIncome;
         foreach(Region region in regions){
-            income += region.income;
+			if (region.enemyUnits.Count == 0 && region.playerUnits.Count != 0) {
+				income += region.income;
+			}
         }
         income -= expenses;
     }

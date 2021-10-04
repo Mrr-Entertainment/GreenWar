@@ -30,18 +30,23 @@ public class AI : MonoBehaviour
 	{
 		int waitTime = Random.Range(0, 20);
 		yield return new WaitForSeconds(waitTime);
+		bool attack = false;
 		foreach (var dest in region.neighbors) {
-			if (dest.owner == Owner.Enemy) {
-				continue;
+			if (dest.playerUnits.Count != 0) {
+				attack = true;
+				foreach(var unit in region.enemyUnits) {
+					unit.moveToRegion(dest);
+				}
 			}
-			Debug.Log("Now attack" + dest);
-			//Great AI
+		}
+		if (! attack) {
 			foreach(var unit in region.enemyUnits) {
-				unit.moveToRegion(dest);
+				int index = Random.Range(0, region.neighbors.Length) ;
+				unit.moveToRegion(region.neighbors[index]);
 			}
-
 		}
 	}
+
 	private IEnumerator spawnEnemies() {
 		var targetRegion1 = findSpawnPoint();
 		var enemy1 = Instantiate(enemyPrefab, targetRegion1.transform.position, Quaternion.identity).GetComponent<Attacker>();
@@ -58,38 +63,38 @@ public class AI : MonoBehaviour
 	}
 
 	Region findSpawnPoint() {
-			List<Region> validRegions = new List<Region>();
-			while(true) {
-				//Empy regions
-				foreach(var region in regions) {
-					if (region.playerUnits.Count == 0 && region.enemyUnits.Count == 0) {
-						validRegions.Add(region);
-					}
-				}
-				if (validRegions.Count != 0) {
-					break;
-				}
-
-				//Enemy regions
-				foreach(var region in regions) {
-					if (region.playerUnits.Count == 0) {
-						validRegions.Add(region);
-					}
-				}
-				if (validRegions.Count != 0) {
-					break;
-				}
-				//Player regions
-				foreach(var region in regions) {
+		List<Region> validRegions = new List<Region>();
+		while(true) {
+			//Empy regions
+			foreach(var region in regions) {
+				if (region.playerUnits.Count == 0 && region.enemyUnits.Count == 0) {
 					validRegions.Add(region);
 				}
-				if (validRegions.Count != 0) {
-					break;
-				}
+			}
+			if (validRegions.Count != 0) {
 				break;
 			}
-			int index = Random.Range(0, validRegions.Count - 1);
-			return validRegions[index];
+
+			//Enemy regions
+			foreach(var region in regions) {
+				if (region.playerUnits.Count == 0) {
+					validRegions.Add(region);
+				}
+			}
+			if (validRegions.Count != 0) {
+				break;
+			}
+			//Player regions
+			foreach(var region in regions) {
+				validRegions.Add(region);
+			}
+			if (validRegions.Count != 0) {
+				break;
+			}
+			break;
+		}
+		int index = Random.Range(0, validRegions.Count - 1);
+		return validRegions[index];
 	}
 
 }
