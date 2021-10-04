@@ -562,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 3918795892429316979, guid: 06460821468de876e8b0193a32eb346c, type: 3}
+      propertyPath: attackPower
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 9005745008823922745, guid: 06460821468de876e8b0193a32eb346c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -703,6 +707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7139006180559128478, guid: cf0164883e679089189348a531d27bb1, type: 3}
+      propertyPath: attackPower
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0164883e679089189348a531d27bb1, type: 3}
 --- !u!1001 &7270783528470445179
@@ -712,6 +720,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 130328544, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 41.68994
+      objectReference: {fileID: 0}
+    - target: {fileID: 215917988, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40.37195
+      objectReference: {fileID: 0}
+    - target: {fileID: 453181739, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40.37195
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718842966, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 41.194946
+      objectReference: {fileID: 0}
     - target: {fileID: 4201384840413524024, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -739,6 +763,10 @@ PrefabInstance:
     - target: {fileID: 4201384840413524024, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280279648829929981, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7270783527266007283, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_Name
@@ -856,6 +884,14 @@ PrefabInstance:
       propertyPath: pollutionText
       value: 
       objectReference: {fileID: 1368418446}
+    - target: {fileID: 5382502824806638700, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
+      propertyPath: maxSpwanInterval
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382502824806638700, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
+      propertyPath: minSpwanInterval
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5569549703636036043, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
       propertyPath: m_RootOrder
       value: 2

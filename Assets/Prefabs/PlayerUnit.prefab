@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: 1
-  attackPower: 5
+  attackPower: 50
   incomePower: 200
   speed: 3
   health: 100
