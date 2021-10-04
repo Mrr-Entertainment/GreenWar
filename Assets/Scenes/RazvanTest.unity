@@ -3774,7 +3774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1699828130, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: price
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1799668429, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3938,7 +3938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7270783528577952196, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_text
-      value: Deforestation:0%
+      value: Deforestation:100%
       objectReference: {fileID: 0}
     - target: {fileID: 7270783528577952197, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_SizeDelta.x
