@@ -9,8 +9,8 @@ public class Region : MonoBehaviour
 	public Region[] neighbors;
 	public Owner owner = Owner.Neutral;
 	public int score = 100;
-	public float treeCount = 35000;
-	public float maxTreeCount = 100000;
+	public float treeCount = 3500;
+	public float maxTreeCount = 20000;
 	public float pollution = 0.1f;
 	public int population = 5000;
 	public List<Attacker> enemyUnits;

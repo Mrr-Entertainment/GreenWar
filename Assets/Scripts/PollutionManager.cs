@@ -32,10 +32,10 @@ public class PollutionManager : MonoBehaviour
         }
 
         globalPollution = pollution / regions.Length;
-        pollutionText.text = "Deforestation: " + (int)(globalPollution*100) + "%";
+        pollutionText.text = (int)(globalPollution*100) + "%";
         lastUpdate = Time.time;
 
-		if (globalPollution >= 0.5) {
+		if (globalPollution >= 1) {
 			Time.timeScale = 0;
 			endScreen.SetActive(true);
 		}

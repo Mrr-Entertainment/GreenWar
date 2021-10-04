@@ -52,13 +52,13 @@ public class EconomyManager : MonoBehaviour
     void Update()
     {
         CalculateIncome();
-        happinessText.text = "Happiness: " + (int)(happiness*100) + "%"; 
-        waterText.text = "Water: " + (int)(water*100) + "%";
-        foodText.text = "Food: " + (int)(food*100) + "%";
-        servicesText.text = "Services: " + (int)(services*100) + "%";
-        recreationText.text = "Recreation: " + (int)(recreation*100) + "%";
-        incomeText.text = "Income: " + income + "$/h";
-        fundsText.text = "Funds: " + funds + "$";
+        happinessText.text = (int)(happiness*100) + "%"; 
+        waterText.text = (int)(water*100) + "%";
+        foodText.text = (int)(food*100) + "%";
+        servicesText.text = (int)(services*100) + "%";
+        recreationText.text = (int)(recreation*100) + "%";
+        incomeText.text = income + "$/h";
+        fundsText.text = funds + "$";
         if(Time.time - lastUpdate < 10f) {
             return;
         }

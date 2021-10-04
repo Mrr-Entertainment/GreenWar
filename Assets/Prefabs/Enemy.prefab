@@ -86,9 +86,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: 2
   attackPower: 3
-  incomePower: 8000
+  incomePower: 2000
   speed: 3
   health: 100
+  maxHealth: 100
   currentRegion: {fileID: 0}
   targetRegion: {fileID: 0}
   selectedIcon: {fileID: 0}

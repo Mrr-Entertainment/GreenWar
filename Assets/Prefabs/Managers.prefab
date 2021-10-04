@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pollutionText: {fileID: 0}
+  endScreen: {fileID: 0}
 --- !u!114 &7705787673096358541
 MonoBehaviour:
   m_ObjectHideFlags: 0
