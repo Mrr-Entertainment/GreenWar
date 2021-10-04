@@ -47,7 +47,12 @@ public class Region : MonoBehaviour
 		} else {
 			pollution += change;
 		}*/
-		pollution = treeCount/maxTreeCount;
+		if(treeCount == 0)
+		{
+			pollution = 1f;
+			return;
+		}
+		pollution = 1 - treeCount/maxTreeCount;
 	}
 
 	public void UpdateForestLevel()
