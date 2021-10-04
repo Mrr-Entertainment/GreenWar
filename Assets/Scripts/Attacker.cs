@@ -9,14 +9,16 @@ public class Attacker : MonoBehaviour
 	public int incomePower;
 	public float speed = 3.0f;
 	public int health;
+	public int maxHealth = 100;
 	public Region  currentRegion;
 	public Region  targetRegion;
 	private Collider2D m_collider;
 	private float m_startZ;
 	private NavMeshAgent2D m_agent;
+	public GameObject selectedIcon;
+	public GameObject unselectedIcon;
 
 
-	private Vector3 m_wanderDestination;
 	enum WanderState {
 		Wander,
 		Wait,
@@ -39,13 +41,6 @@ public class Attacker : MonoBehaviour
 		var pos = transform.position;
 		pos.z = m_startZ;
 		transform.position = pos;
-		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
-		} else {
-			if (WanderState.Wander == m_wanderState) {
-				m_wanderState = WanderState.Wait;
-				StartCoroutine(WaitToWander());
-			}
-		}
 	}
 
 	// called when this GameObject collides with GameObject2.
@@ -59,41 +54,28 @@ public class Attacker : MonoBehaviour
 	}
 
 
-	void wander() {
-		if (Vector2.Distance(m_wanderDestination,  transform.position) > 0.1 && m_wanderState == WanderState.Wander) {
-
-			var pos  = m_wanderDestination;
-			pos.z = m_startZ;
-			m_agent.destination = pos;
-		} else {
-			if (WanderState.Wander == m_wanderState) {
-				m_wanderState = WanderState.Wait;
-				StartCoroutine(WaitToWander());
-			}
-		}
-	}
-
-	IEnumerator WaitToWander()
-	{
-		yield return new WaitForSeconds(UnityEngine.Random.Range(1,5));
-		setWanderPoint();
-		m_wanderState = WanderState.Wander;
-	}
-
 	void setWanderPoint() {
 		var bounds = currentRegion.getBounds();
 		var center = bounds.center;
-		/* Debug.Log("Start to wander to " + center); */
 
 		int attempt = 0;
-		Vector3 target = m_wanderDestination;
+		Vector3 target = currentRegion.transform.position;
+		Debug.Log("Wander in " + currentRegion);
 		do {
 			target.x = UnityEngine.Random.Range(center.x - bounds.extents.x, center.x + bounds.extents.x);
 			target.y = UnityEngine.Random.Range(center.y - bounds.extents.y, center.y + bounds.extents.y);
 			attempt++;
-		} while (!GetComponent<Collider2D>().OverlapPoint(target) || attempt <= 100);
+			Debug.Log("Try Wander point to " + target);
+			if (m_collider.OverlapPoint(target)) {
+				break;
+			}
+		} while (attempt <= 100);
+		if (attempt > 100) {
+			target = currentRegion.transform.position;
+		}
 		target.z = transform.position.z;
-		m_wanderDestination = target;
+		Debug.Log("SEt Wander point to " + target);
+		m_agent.destination = target;
 	}
 
 	public void moveToRegion(Region region){
@@ -101,12 +83,10 @@ public class Attacker : MonoBehaviour
 			return;
 		}
 		targetRegion = region;
-		float step =  speed * Time.fixedDeltaTime; // calculate distance to move
 
 		var pos  = targetRegion.transform.position;
 		pos.z = m_startZ;
 		m_agent.destination = pos;
-		m_wanderDestination = targetRegion.transform.position;
 	}
 
 
@@ -125,5 +105,14 @@ public class Attacker : MonoBehaviour
 				break;
 			}
 		}
+	}
+
+	public void selectUnit() {
+		selectedIcon.SetActive(true);
+		unselectedIcon.SetActive(false);
+	}
+	public void unselectUnit() {
+		selectedIcon.SetActive(false);
+		unselectedIcon.SetActive(true);
 	}
 }

@@ -45,7 +45,6 @@ public class AI : MonoBehaviour
 	private IEnumerator spawnEnemies() {
 		var targetRegion1 = findSpawnPoint();
 		var enemy1 = Instantiate(enemyPrefab, targetRegion1.transform.position, Quaternion.identity).GetComponent<Attacker>();
-		targetRegion1.enterRegion(enemy1);
 		StartCoroutine(attackNextRegion(targetRegion1));
 		while(true) {
 			int waitTime = Random.Range(minSpwanInterval, maxSpwanInterval);
@@ -54,7 +53,6 @@ public class AI : MonoBehaviour
 
 			var targetRegion = findSpawnPoint();
 			var enemy = Instantiate(enemyPrefab, targetRegion.transform.position, Quaternion.identity).GetComponent<Attacker>();
-			targetRegion.enterRegion(enemy);
 			StartCoroutine(attackNextRegion(targetRegion));
 		}
 	}

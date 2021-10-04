@@ -11,14 +11,11 @@ public class BattleManager : MonoBehaviour
 	void Start()
 	{
 		regions = FindObjectsOfType(typeof(Region)) as Region[];
+		StartCoroutine(runBattles());
 	}
 
 	void Update()
 	{
-		foreach(Region region in regions) {
-			resolveBattle(region);
-		}
-
 		if (Input.GetMouseButton(0)) {
 			OnClicked();
 		}
@@ -67,7 +64,15 @@ public class BattleManager : MonoBehaviour
 			if(hit.rigidbody != null){
 				Attacker unit = hit.rigidbody.gameObject.GetComponent<Attacker>();
 				if (unit != null && unit.owner == Owner.Player) {
+					if (selectedUnit != null) {
+						selectedUnit.unselectUnit();
+					}
+					if (selectedUnit == unit) {
+						selectedUnit = null;
+						break;
+					}
 					selectedUnit = unit;
+					selectedUnit.selectUnit();
 					unitFound = true;
 					break;
 				}
@@ -83,6 +88,15 @@ public class BattleManager : MonoBehaviour
 				selectedUnit.moveToRegion(tempRegion);
 			}
 
+		}
+	}
+
+	IEnumerator runBattles() {
+		while(true) {
+			yield return new WaitForSeconds(2f);
+			foreach(Region region in regions) {
+				resolveBattle(region);
+			}
 		}
 	}
 }
