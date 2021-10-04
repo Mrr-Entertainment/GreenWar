@@ -16436,6 +16436,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[3]
       value: 
       objectReference: {fileID: 1613836867}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[4]
+      value: 
+      objectReference: {fileID: 1350499648}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!4 &8986609848181508462 stripped
@@ -17348,7 +17352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -20649,7 +20653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -22496,7 +22500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -24647,7 +24651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3602852811455863962, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -25427,13 +25431,13 @@ PrefabInstance:
       objectReference: {fileID: 5569050035572355474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
---- !u!1 &5569050035727780640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3602852811455863958, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
-  m_PrefabInstance: {fileID: 8986609848572860342}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5569050035727780643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3602852811455863957, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+  m_PrefabInstance: {fileID: 8986609848572860342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5569050035727780640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3602852811455863958, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
   m_PrefabInstance: {fileID: 8986609848572860342}
   m_PrefabAsset: {fileID: 0}
