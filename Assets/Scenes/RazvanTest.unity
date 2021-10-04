@@ -3696,9 +3696,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1699828130, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: price
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1799668429, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnButtonUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1799668429, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1830622692, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_IsActive

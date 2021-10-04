@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Region
   - Managers
+  - UnitButton
+  - PlusButton
+  - MinusButton
   layers:
   - Default
   - TransparentFX
