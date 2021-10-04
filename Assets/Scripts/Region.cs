@@ -17,6 +17,8 @@ public class Region : MonoBehaviour
 	public List<Attacker> playerUnits;
 	public float lastIncomeTime = 0;
 
+	float lastUpdate;
+
 	public GameObject[] forestLevel;
 	public int currentForestLevelIndex;
 
@@ -26,23 +28,26 @@ public class Region : MonoBehaviour
 
 	void Start()
 	{
+		lastUpdate = Time.time;
 		m_collider = GetComponent<PolygonCollider2D>();
 		foreach (var tree in forestLevel) {
 			tree.SetActive(false);
 		}
 		UpdateForestLevel();
 		income = 0;
+		UpdatePollution();
 	}
 
 	void UpdatePollution()
 	{
-		float change = (float)(population/(treeCount*Math.Log10(population)));
+		/*float change = (float)(population/(treeCount*Math.Log10(population)));
 		float ratio = treeCount/maxTreeCount;
 		if(ratio >= 0.6f) {
 			pollution -= change;
 		} else {
 			pollution += change;
-		}
+		}*/
+		pollution = treeCount/maxTreeCount;
 	}
 
 	public void UpdateForestLevel()
@@ -77,7 +82,11 @@ public class Region : MonoBehaviour
 
 	void Update()
 	{
-
+		if(Time.time - lastUpdate < 10f) {
+            return;
+        }
+		lastUpdate = Time.time;
+		UpdatePollution();
 	}
 
 	public Bounds getBounds() {

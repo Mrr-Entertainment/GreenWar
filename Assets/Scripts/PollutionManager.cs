@@ -24,7 +24,7 @@ public class PollutionManager : MonoBehaviour
             firstUpdate = false;
             return;
         }
-        
+
         float pollution = 0f;
         foreach(Region region in regions){    
             pollution += region.pollution;
