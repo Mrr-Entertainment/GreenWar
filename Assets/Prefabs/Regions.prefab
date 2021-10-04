@@ -10427,7 +10427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -10449,6 +10449,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[4]
       value: 
       objectReference: {fileID: 626100375}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 30393715}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!4 &8986609847364833800 stripped
@@ -16418,7 +16422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -16438,6 +16442,10 @@ PrefabInstance:
       objectReference: {fileID: 1613836867}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[4]
+      value: 
+      objectReference: {fileID: 213997135}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
       value: 
       objectReference: {fileID: 1350499648}
     m_RemovedComponents: []
@@ -17820,7 +17828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -17842,6 +17850,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[4]
       value: 
       objectReference: {fileID: 5569050034663552018}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 5569050035349414747}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!4 &8986609848204090901 stripped
@@ -19503,7 +19515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -19525,6 +19537,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[4]
       value: 
       objectReference: {fileID: 5569050035778122133}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 5569050035072188224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!4 &8986609848248923212 stripped
@@ -21201,7 +21217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -21223,6 +21239,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[4]
       value: 
       objectReference: {fileID: 5569050034718174419}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 5569050035196267436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!1 &8986609849291497092 stripped
@@ -25407,7 +25427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
       propertyPath: forestLevel.Array.data[0]
@@ -25429,6 +25449,10 @@ PrefabInstance:
       propertyPath: forestLevel.Array.data[4]
       value: 
       objectReference: {fileID: 5569050035572355474}
+    - target: {fileID: 8471873658193192120, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
+      propertyPath: forestLevel.Array.data[5]
+      value: 
+      objectReference: {fileID: 5569050034420122602}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0203ad1246ae8b16dbd7c5be4889130b, type: 3}
 --- !u!4 &5569050035727780643 stripped
