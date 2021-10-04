@@ -128,29 +128,29 @@ public class PriceChecker : MonoBehaviour
                     economyManager.PlusWater(cost);
                     break;
                 case Resource.WaterMinus:       
-                    economyManager.MinusWater(cost);
                     cost *= -1;
+                    economyManager.MinusWater(cost);
                     break;
                 case Resource.FoodPlus:
                     economyManager.PlusFood(cost);
                     break;
                 case Resource.FoodMinus:
-                    economyManager.MinusFood(cost);
                     cost *= -1;
+                    economyManager.MinusFood(cost);
                     break;
                 case Resource.ServicesPlus:
                     economyManager.PlusServices(cost);
                     break;
                 case Resource.ServicesMinus:
-                    economyManager.MinusServices(cost);
                     cost *= -1;
+                    economyManager.MinusServices(cost);
                     break;
                 case Resource.RecreationPlus:
                     economyManager.PlusRecreation(cost);
                     break;
                 case Resource.RecreationMinus:
-                    economyManager.MinusRecreation(cost);
                     cost *= -1;
+                    economyManager.MinusRecreation(cost);
                     break;
             }
             economyManager.income += cost;

@@ -69,69 +69,85 @@ public class EconomyManager : MonoBehaviour
 
     public void PlusWater(int price)
     {
-        water += 0.25f;
-        expenses += price;
-        if(water > 1f){
-            water = 1f;
+        if(water < 0.99f) {
+            water += 0.25f;
+            expenses += price;
+            if(water > 1f){
+                water = 1f;
+            }
         }
     }
     public void MinusWater(int price)
-    {
-        water -= 0.25f;
-        expenses += price;
-        if(water < 0f){
-            water = 0f;
+    {   
+        if(water > 0.01f) {
+            water -= 0.25f;
+            expenses += price;
+            if(water < 0f){
+                water = 0f;
+            }
         }
     }
 
     public void PlusFood(int price)
     {
-        food += 0.20f;
-        expenses += price;
-        if(food > 1f){
-            food = 1f;
+        if(food < 0.99f) {
+            food += 0.20f;
+            expenses += price;
+            if(food > 1f){
+                food = 1f;
+            }
         }
     }
     public void MinusFood(int price)
     {
-        food -= 0.20f;
-        expenses += price;
-        if(food < 0f){
-            food = 0f;
+        if(food > 0.01f) {
+            food -= 0.20f;
+            expenses += price;
+            if(food < 0f){
+                food = 0f;
+            }
         }
     }
 
     public void PlusServices(int price)
     {
-        services += 0.15f;
-        expenses += price;
-        if(services > 1f){
-            services = 1f;
+        if(services < 0.99f) {
+            services += 0.15f;
+            expenses += price;
+            if(services > 1f){
+                services = 1f;
+            }
         }
     }
     public void MinusServices(int price)
     {
-        services -= 0.15f;
-        expenses += price;
-        if(services < 0f){
-            services = 0f;
-        }
+        if(services > 0.01f) {
+            services -= 0.15f;
+            expenses += price;
+            if(services < 0f){
+                services = 0f;
+            }
+        }    
     }
 
     public void PlusRecreation(int price)
     {
-        recreation += 0.10f;
-        expenses += price;
-        if(recreation > 1f){
-            recreation = 1f;
+        if(recreation < 0.99f) {
+            recreation += 0.10f;
+            expenses += price;
+            if(recreation > 1f){
+                recreation = 1f;
+            }
         }
     }
     public void MinusRecreation(int price)
     {
-        recreation -= 0.10f;
-        expenses += price;
-        if(recreation < 0f){
-            recreation = 0f;
+        if(recreation > 0.01f) {
+            recreation -= 0.10f;
+            expenses += price;
+            if(recreation < 0f){
+                recreation = 0f;
+            }
         }
     }
 }
