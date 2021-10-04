@@ -31,7 +31,7 @@ public class PollutionManager : MonoBehaviour
         }
 
         globalPollution = pollution / regions.Length;
-        pollutionText.text = "Pollution: " + (int)(globalPollution*100) + "%";
+        pollutionText.text = "Deforestation: " + (int)(globalPollution*100) + "%";
         lastUpdate = Time.time;
     }
 }

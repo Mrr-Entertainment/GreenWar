@@ -3936,6 +3936,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 7270783528577952196, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+      propertyPath: m_text
+      value: Deforestation:0%
+      objectReference: {fileID: 0}
     - target: {fileID: 7270783528577952197, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 350
