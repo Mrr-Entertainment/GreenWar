@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: e95f9d86780e8be1893a76ad91a688e8, type: 2}
+--- !u!1 &98750879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 98750879, guid: bcca8562d9c9e9b499c495f1c1b87fe6, type: 3}
+  m_PrefabInstance: {fileID: 7270783528470445179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149606804
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +797,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 533732997, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
+      propertyPath: endScreen
+      value: 
+      objectReference: {fileID: 98750879}
     - target: {fileID: 533732997, guid: d4e8a1158e9707d23a446b7d2882b661, type: 3}
       propertyPath: pollutionText
       value: 

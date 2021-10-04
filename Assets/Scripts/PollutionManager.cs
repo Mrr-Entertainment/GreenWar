@@ -9,6 +9,7 @@ public class PollutionManager : MonoBehaviour
     float lastUpdate;
     float globalPollution;
     public TextMeshProUGUI pollutionText;
+	public GameObject endScreen;
 
     bool firstUpdate = true;
 
@@ -33,5 +34,10 @@ public class PollutionManager : MonoBehaviour
         globalPollution = pollution / regions.Length;
         pollutionText.text = "Deforestation: " + (int)(globalPollution*100) + "%";
         lastUpdate = Time.time;
+
+		if (globalPollution >= 0.5) {
+			Time.timeScale = 0;
+			endScreen.SetActive(true);
+		}
     }
 }
